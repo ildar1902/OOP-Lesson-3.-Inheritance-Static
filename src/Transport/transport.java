@@ -63,7 +63,7 @@ public class transport {
         if (color == null || color.isEmpty()) {
             this.color = "белый";
         } else {
-            this.color = this.color;}
+            this.color = color;}
     }
 
     public double getMaxSpeed() {

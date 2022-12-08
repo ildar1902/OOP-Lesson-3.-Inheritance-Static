@@ -1,3 +1,4 @@
+import Transport.Bus;
 import Transport.Car;
 import Transport.Train;
 
@@ -128,6 +129,29 @@ public class Main {
                 "Станция Ленинград-пассажирский",
                 8);
         System.out.println(leningrad);
-
+        Bus b1 = new Bus(
+                "МАЗ",
+                "1034",
+                2015,
+                "Беларусь",
+                "белый",
+                110);
+        System.out.println(b1);
+        Bus b2 = new Bus(
+                "ПАЗ",
+                "Вектор",
+                2012,
+                "Россия",
+                "синий",
+                100);
+        System.out.println(b2);
+        Bus b3 = new Bus(
+                "ЛАЗ",
+                "AeroLAZ",
+                2014,
+                "Украина",
+                "красный",
+                150);
+        System.out.println(b3);
     }
 }
