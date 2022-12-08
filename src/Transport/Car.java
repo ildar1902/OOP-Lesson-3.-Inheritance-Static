@@ -73,9 +73,9 @@ public class Car extends transport {
     public Car(String brand, String model, double engineVolume,
                String color, int year, String country,
                String transmission, String bodyType,
-               String serialNumber, int numberSeats) {
+               String serialNumber, int numberSeats, double maxSpeed) {
 
-        super(brand, model, year, country);
+        super(brand, model, year, country,color,maxSpeed);
         setEngineVolume(engineVolume);
                 setTransmission(transmission);
         this.bodyType = bodyType;
@@ -88,7 +88,6 @@ public class Car extends transport {
         }
         setSummerTyres(summerTyres);
     }
-
 
     public double getEngineVolume() {
         return engineVolume;
@@ -164,12 +163,13 @@ public class Car extends transport {
     public String toString() {
         return "Автомобиль: " + getBrand() + " " + getModel() +
                 ", объем двигателя: " + engineVolume +
-                ", цвет: " + getColorBody() +
+                ", цвет: " + getColor() +
                 ", год производства: " + getYear() +
                 ", страна сборки: " + getCountry() +
                 ", КПП: " + transmission +
                 ", кузов: " + bodyType +
                 ", регистрационный номер: " + serialNumber +
-                ", количество мет: " + numberSeats;
+                ", количество мет: " + numberSeats +
+                ", максимальная скорость: " + getMaxSpeed();
     }
 }

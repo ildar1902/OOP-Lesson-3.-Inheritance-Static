@@ -1,4 +1,5 @@
 import Transport.Car;
+import Transport.Train;
 
 public class Main {
     public static void main(String[] args) {
@@ -16,7 +17,8 @@ public class Main {
                 "МКПП",
                 "седан",
                 "а001аа102",
-                5);
+                5,
+                0);
         System.out.println(ladaGranta);
         Car audiA8 = new Car(
                 "Audi",
@@ -28,7 +30,8 @@ public class Main {
                 "АКПП",
                 "седан",
                 "а002аа102",
-                4);
+                4,
+                0);
         System.out.println(audiA8);
         Car bmw = new Car(
                 "BMW",
@@ -40,7 +43,8 @@ public class Main {
                 "МКПП",
                 "хэтчбек",
                 "а003аа102",
-                4);
+                4,
+                0);
         System.out.println(bmw);
         Car kiaSportage = new Car(
                 "Kia",
@@ -52,7 +56,8 @@ public class Main {
                 "АКПП",
                 "кроссовер",
                 "а004аа102",
-                6);
+                6,
+                0);
         System.out.println(kiaSportage);
         Car hyundai = new Car(
                 "Hyundai",
@@ -64,11 +69,12 @@ public class Main {
                 "МКПП",
                 "седан",
                 "а005аа102",
-                5);
+                5,
+                0);
         System.out.println(hyundai);
         System.out.println();
-//        Car.Key bmwKey = new Car.Key(true, false);
-//        System.out.println(bmwKey);
+        Car.Key bmwKey = new Car.Key(true, false);
+        System.out.println(bmwKey);
         Car.Insurance grantaInsurance = ladaGranta.new Insurance(
                 2023,
                 9890,
@@ -94,6 +100,34 @@ public class Main {
                 10890,
                 "ААА000005");
         System.out.println("Хёндай: " + hyundaiInsurance);
+        System.out.println();
+
+        Train lastochka = new Train(
+                "Ласточка",
+                "В-901",
+                2011,
+                "Россия",
+                "",
+                301,
+                3500,
+                "",
+                "Белорусский вокзал",
+                "Минск-пассажирский",
+                11);
+        System.out.println(lastochka);
+        Train leningrad = new Train(
+                "Ленинград",
+                "D-125",
+                2019,
+                "Россия",
+                "",
+                270,
+                1700,
+                "",
+                "Ленинградский вокзал",
+                "Станция Ленинград-пассажирский",
+                8);
+        System.out.println(leningrad);
 
     }
 }

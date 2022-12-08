@@ -11,10 +11,10 @@ public class transport {
     private final String model;
     private final int year;
     private final String country;
-    private String colorBody;
+    private String color;
     private double maxSpeed;
 
-    public transport(String brand, String model, int year, String country) {
+    public transport(String brand, String model, int year, String country, String color, double maxSpeed) {
         if (brand == null || brand.isEmpty()) {
             this.brand = "default";
         } else {
@@ -35,6 +35,8 @@ public class transport {
         } else {
             this.country = country;
         }
+        setColor(color);
+        setMaxSpeed(maxSpeed);
     }
 
     public String getBrand() {
@@ -53,15 +55,15 @@ public class transport {
         return country;
     }
 
-    public String getColorBody() {
-        return colorBody;
+    public String getColor() {
+        return color;
     }
 
-    public void setColorBody(String colorBody) {
-        if (colorBody == null || colorBody.isEmpty()) {
-            this.colorBody = "белый";
+    public void setColor(String color) {
+        if (color == null || color.isEmpty()) {
+            this.color = "белый";
         } else {
-            this.colorBody = colorBody;}
+            this.color = this.color;}
     }
 
     public double getMaxSpeed() {
