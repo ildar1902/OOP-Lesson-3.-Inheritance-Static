@@ -6,22 +6,25 @@ public class Train extends transport {
     private String departureStationName;
     private String finalStop;
     private int numberWagons;
+    private String typeOfFuel;
 
     public Train(String brand, String model, int year, String country, String color,
                  double maxSpeed, double priceOfTrip,
-                 String travelTime, String departureStationName, String finalStop, int numberWagons, double fuelPercentage) {
+                 String travelTime, String departureStationName, String finalStop,
+                 int numberWagons, double fuelPercentage, String typeOfFuel) {
         super(brand, model, year, country, color, maxSpeed, fuelPercentage);
         setPriceOfTrip(priceOfTrip);
         setTravelTime(travelTime);
         setDepartureStationName(departureStationName);
         setFinalStop(finalStop);
         setNumberWagons(numberWagons);
+        this.typeOfFuel = typeOfFuel;
     }
     public Train(String brand, String model, int year, String country, String color,
                  double maxSpeed, double priceOfTrip,
                  String travelTime, String departureStationName, String finalStop, int numberWagons) {
        this (brand, model, year, country, color, maxSpeed, priceOfTrip, travelTime, departureStationName, finalStop,
-               numberWagons, 0);
+               numberWagons, 0,"");
         setPriceOfTrip(priceOfTrip);
         setTravelTime(travelTime);
         setDepartureStationName(departureStationName);
@@ -86,6 +89,15 @@ public class Train extends transport {
         } else {
             this.numberWagons = numberWagons;
         }
+    }
+
+    public String getTypeOfFuel() {
+        return typeOfFuel;
+    }
+
+    public void setTypeOfFuel(String typeOfFuel) {
+
+        this.typeOfFuel = typeOfFuel;
     }
 
     @Override

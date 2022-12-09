@@ -20,8 +20,11 @@ public class Main {
                 "а001аа102",
                 5,
                 180,
-                75.67);
-        System.out.println(ladaGranta);
+                75.67,
+                null);
+       System.out.println(ladaGranta);
+        ladaGranta.refill();
+        System.out.println(ladaGranta.getFuelPercentage());
         Car audiA8 = new Car(
                 "Audi",
                 "A8 50 L TDI quattro",
@@ -33,8 +36,11 @@ public class Main {
                 "седан",
                 "а002аа102",
                 4,
-                220);
+                220,
+                10.34,
+                "электроэнергия");
         System.out.println(audiA8);
+        audiA8.refill();
         Car bmw = new Car(
                 "BMW",
                 "Z8",

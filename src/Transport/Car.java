@@ -3,10 +3,6 @@ package Transport;
 import java.time.LocalDate;
 
 public class Car extends transport {
-    @Override
-    public void refill() {
-
-    }
 
     public static class Key {
         private final boolean remoteEngineStart;
@@ -74,11 +70,12 @@ public class Car extends transport {
     private String serialNumber;
     private final int numberSeats;
     private boolean summerTyres;
+    private String typeOfFuel;
 
     public Car(String brand, String model, double engineVolume,
                String color, int year, String country,
                String transmission, String bodyType,
-               String serialNumber, int numberSeats, double maxSpeed, double fuelPercentage) {
+               String serialNumber, int numberSeats, double maxSpeed, double fuelPercentage, String typeOfFuel) {
 
         super(brand, model, year, country, color, maxSpeed, fuelPercentage);
         setEngineVolume(engineVolume);
@@ -92,6 +89,7 @@ public class Car extends transport {
             numberSeats = 5;
         }
         setSummerTyres(summerTyres);
+setTypeOfFuel(typeOfFuel);
     }
 
     public Car(String brand, String model, double engineVolume,
@@ -99,8 +97,7 @@ public class Car extends transport {
                String transmission, String bodyType,
                String serialNumber, int numberSeats, double maxSpeed) {
         this(brand, model, engineVolume, color, year, country, transmission, bodyType,
-                serialNumber, numberSeats, maxSpeed, 0);
-
+                serialNumber, numberSeats, maxSpeed, 0,"");
     }
 
     public double getEngineVolume() {
@@ -155,6 +152,20 @@ public class Car extends transport {
         this.summerTyres = summerTyres;
     }
 
+    public String getTypeOfFuel() {
+        return typeOfFuel;
+    }
+
+   public void setTypeOfFuel(String typeOfFuel) {
+       if (typeOfFuel!= null && !typeOfFuel.isEmpty()
+               && !typeOfFuel.isBlank() &&( typeOfFuel.equals("дизель") ||typeOfFuel.equals("электроэнергия") )) {
+           this.typeOfFuel = typeOfFuel;
+       } else {
+           this.typeOfFuel = "бензин";
+       }
+   }
+
+
     public void changeTyres() {
         setSummerTyres(!summerTyres);
     }
@@ -172,6 +183,21 @@ public class Car extends transport {
                 && Character.isDigit(serialNumber.charAt(6))
                 && Character.isDigit(serialNumber.charAt(7))
                 && Character.isDigit(serialNumber.charAt(8));
+    }
+
+    @Override
+    public void refill() {
+        if (getFuelPercentage() < fullTank && typeOfFuel.equals("бензин") || typeOfFuel.equals("дизель")) {
+            System.out.println("Едем на " + getBrand() + " на АЗС, где заправляют " + typeOfFuel);
+            System.out.println("Заправляем " + typeOfFuel);
+            setFuelPercentage(fullTank);
+            System.out.println("Готово! Теперь уровень топлива = " + getFuelPercentage() + "%!");
+        } else if (getFuelPercentage() < fullTank && typeOfFuel.equals("электроэнергия")) {
+            System.out.println("Едем на " + getBrand() + " на специальную электропарковку.");
+            System.out.println("Заряжаем электрокар");
+            setFuelPercentage(fullTank);
+            System.out.println("Готово! Теперь уровень заряда = " + getFuelPercentage() + "%!");
+        }
     }
 
     @Override

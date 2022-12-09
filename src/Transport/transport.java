@@ -8,6 +8,7 @@ public abstract class transport {
     private String color;
     private double maxSpeed;
     private double fuelPercentage;
+    public final double fullTank;
 
     public transport(String brand, String model, int year, String country, String color,
                      double maxSpeed, double fuelPercentage) {
@@ -34,6 +35,7 @@ public abstract class transport {
         setColor(color);
         setMaxSpeed(maxSpeed);
         setFuelPercentage(fuelPercentage);
+        fullTank = 100.00;
     }
 
     public abstract void refill();
@@ -85,7 +87,6 @@ public abstract class transport {
         this.maxSpeed = maxSpeed;
         if (maxSpeed <= 0) {
             this.maxSpeed = 100;
-
         }
     }
 }
