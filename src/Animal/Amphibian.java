@@ -2,13 +2,15 @@ package Animal;
 
 public class Amphibian extends animal {
     private String livingEnvironment;
-    private String kindName;
+    private final String kindName;
 
        public Amphibian(String kindName, String name, int age, String livingEnvironment) {
         super(name, age);
         setLivingEnvironment(livingEnvironment);
            if (kindName != null && !kindName.isEmpty() && !kindName.isBlank()) {
                this.kindName = kindName;
+           } else {
+               this.kindName = "Информация не указана";
            }
     }
     public void hunt() {

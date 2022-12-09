@@ -1,4 +1,5 @@
 import Animal.Amphibian;
+import Animal.Flightless;
 import Animal.Herbivore;
 import Animal.Predator;
 import Transport.Bus;
@@ -170,7 +171,14 @@ public class Main {
         System.out.println("b3.getFuelPercentage() = " + b3.getFuelPercentage());
         b3.refill();
         System.out.println();
+
+//        Здесь транспорт заканчивается
+//                Начинаются животные
+
         System.out.println(" ДЗ 3. Иерархия классов животных");
+
+//        ТРАВОЯДНЫЕ
+
         Herbivore giraffe = new Herbivore(
                 "жираф",
                 "Рафф",
@@ -212,8 +220,9 @@ public class Main {
         gazelle.move();
         gazelle.walk();
         gazelle.sleep();
-
         Herbivore.checkUniqueness(horse, gazelle, giraffe);
+
+//        ХИЩНИКИ
 
         System.out.println();
         Predator hyena = new Predator(
@@ -259,6 +268,9 @@ public class Main {
         bear.sleep();
         Predator.checkUniqueness(bear,tiger,hyena);
         System.out.println();
+
+//        ЗЕМНОВОДНЫЕ
+
         Amphibian frog = new Amphibian(
                 "лягушка",
                 "Алёна",
@@ -283,7 +295,50 @@ public class Main {
         Amphibian.checkUniqueness(frog,snakeFreshwater);
         System.out.println();
 
+//        НЕЛЕТАЮЩИЕ ПТИЦЫ
+
+        Flightless peacock = new Flightless(
+                "павлин",
+                "Арсений",
+                7,
+                "джунгли",
+                "ходьба");
+        System.out.println(peacock);
+        peacock.hunt();
+        peacock.walk();
+        peacock.eat();
+        peacock.move();
+        peacock.sleep();
+        System.out.println();
+        Flightless penguin = new Flightless(
+                "пингвин",
+                "Марсель",
+                4,
+                "Антарктида",
+                "бег");
+        System.out.println(penguin);
+        penguin.hunt();
+        penguin.walk();
+        penguin.eat();
+        penguin.move();
+        penguin.sleep();
+        System.out.println();
+        Flightless dodo = new Flightless(
+                "птица додо",
+                "Дмитрий",
+                3,
+                "лес",
+                "бег");
+        System.out.println(dodo);
+        dodo.hunt();
+        dodo.walk();
+        dodo.eat();
+        dodo.move();
+        dodo.sleep();
+        System.out.println();
+        Flightless.checkUniqueness(peacock,penguin,dodo);
     }
 }
 //hyena, tiger, bear
 //frog,  freshwater
+//peacock, penguin, dodo bird

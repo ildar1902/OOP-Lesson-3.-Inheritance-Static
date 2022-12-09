@@ -1,13 +1,19 @@
 package Animal;
 public class Herbivore extends Mammal {
-    private String typeOfFood;
-    private String kindName;
+    private final String typeOfFood;
+    private final String kindName;
 
     public Herbivore(String kindName, String name, int age, String livingEnvironment, int travelSpeed, String typeOfFood) {
         super(name, age, livingEnvironment, travelSpeed);
-        setTypeOfFood(typeOfFood);
+        if (typeOfFood != null && !typeOfFood.isEmpty() && !typeOfFood.isBlank()) {
+            this.typeOfFood = typeOfFood;
+        } else {
+            this.typeOfFood = "Информация не указана";
+        }
         if (kindName != null && !kindName.isEmpty() && !kindName.isBlank()) {
             this.kindName = kindName;
+        } else {
+            this.kindName = "Информация не указана";
         }
     }
 
@@ -43,13 +49,6 @@ public class Herbivore extends Mammal {
     public String getTypeOfFood() {
         return typeOfFood;
     }
-
-    public void setTypeOfFood(String typeOfFood) {
-        if (typeOfFood != null && !typeOfFood.isEmpty() && !typeOfFood.isBlank()) {
-            this.typeOfFood = typeOfFood;
-        }
-    }
-
     public static void checkUniqueness(Herbivore herbivore, Herbivore otherHerbivore, Herbivore thirdHerbivore) {
         if (!herbivore.equals(otherHerbivore) && !herbivore.equals(thirdHerbivore)
                 && !otherHerbivore.equals(thirdHerbivore)) {
