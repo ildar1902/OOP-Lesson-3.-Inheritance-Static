@@ -4,7 +4,7 @@ import java.time.LocalDate;
 
 public abstract class animal {
     private String name;
-        private final int yearBirth;
+    private final int yearBirth;
 
     public animal(String name, int age) {
         setName(name);
@@ -14,6 +14,7 @@ public abstract class animal {
             this.yearBirth = LocalDate.now().getYear() - Math.abs(age);
         }
     }
+
     public abstract void eat();
 
     public abstract void sleep();
@@ -23,6 +24,7 @@ public abstract class animal {
     public String getName() {
         return name;
     }
+
     protected void setName(String name) {
         if (name == null || name.isEmpty() || name.isBlank()) {
             this.name = "some kind of animal";
@@ -30,6 +32,7 @@ public abstract class animal {
             this.name = name;
         }
     }
+
     public int getAge() {
         return LocalDate.now().getYear() - yearBirth;
     }
