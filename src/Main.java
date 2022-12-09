@@ -1,3 +1,4 @@
+import Animal.Herbivore;
 import Transport.Bus;
 import Transport.Car;
 import Transport.Train;
@@ -22,7 +23,7 @@ public class Main {
                 180,
                 75.67,
                 null);
-       System.out.println(ladaGranta);
+        System.out.println(ladaGranta);
         ladaGranta.refill();
         System.out.println(ladaGranta.getFuelPercentage());
         Car audiA8 = new Car(
@@ -164,7 +165,53 @@ public class Main {
                 150,
                 72.15);
         System.out.println(b3);
-     System.out.println("b3.getFuelPercentage() = " + b3.getFuelPercentage());
-     b3.refill();
+        System.out.println("b3.getFuelPercentage() = " + b3.getFuelPercentage());
+        b3.refill();
+        System.out.println();
+        System.out.println(" ДЗ 3. Иерархия классов животных");
+        Herbivore giraffe = new Herbivore(
+                "Жираф",
+                "Жирафф",
+                3,
+                "Африка",
+                35,
+                "растения");
+        System.out.println(giraffe);
+        giraffe.graze();
+        giraffe.eat();
+        giraffe.move();
+        giraffe.walk();
+        giraffe.sleep();
+        System.out.println();
+        Herbivore horse = new Herbivore(
+                "Лошадь",
+                "Лошадка",
+                2,
+                "степь",
+                30,
+                "трава");
+        System.out.println(horse);
+        horse.graze();
+        horse.eat();
+        horse.move();
+        horse.walk();
+        horse.sleep();
+        System.out.println();
+        Herbivore gazelle = new Herbivore(
+                "Газель",
+                "Гузель",
+                5,
+                "Африка",
+                45,
+                "растения");
+        System.out.println(gazelle);
+        gazelle.graze();
+        gazelle.eat();
+        gazelle.move();
+        gazelle.walk();
+        gazelle.sleep();
+        System.out.println();
+
     }
 }
+//horse, giraffe, gazelle
