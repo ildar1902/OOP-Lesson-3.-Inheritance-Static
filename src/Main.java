@@ -1,4 +1,5 @@
 import Animal.Herbivore;
+import Animal.Predator;
 import Transport.Bus;
 import Transport.Car;
 import Transport.Train;
@@ -170,8 +171,8 @@ public class Main {
         System.out.println();
         System.out.println(" ДЗ 3. Иерархия классов животных");
         Herbivore giraffe = new Herbivore(
-                "Жираф",
-                "Жирафф",
+                "жираф",
+                "Рафф",
                 3,
                 "Африка",
                 35,
@@ -184,7 +185,7 @@ public class Main {
         giraffe.sleep();
         System.out.println();
         Herbivore horse = new Herbivore(
-                "Лошадь",
+                "лошадь",
                 "Лошадка",
                 2,
                 "степь",
@@ -198,7 +199,7 @@ public class Main {
         horse.sleep();
         System.out.println();
         Herbivore gazelle = new Herbivore(
-                "Газель",
+                "газель",
                 "Гузель",
                 5,
                 "Африка",
@@ -211,7 +212,49 @@ public class Main {
         gazelle.walk();
         gazelle.sleep();
         System.out.println();
+        Predator hyena = new Predator(
+                "гиена",
+                "Олег",
+                6,
+                "Африка",
+                50,
+                "живность");
+        System.out.println(hyena);
+        hyena.prey();
+        hyena.eat();
+        hyena.walk();
+        hyena.move();
+        hyena.sleep();
+        System.out.println();
+        Predator tiger = new Predator(
+                "тигр",
+                "Лев",
+                5,
+                "заповедник",
+                65,
+                "мясо других животных");
+        System.out.println(tiger);
+        tiger.prey();
+        tiger.eat();
+        tiger.walk();
+        tiger.move();
+        tiger.sleep();
+        System.out.println();
+        Predator bear = new Predator(
+                "медведь",
+                "Мишка",
+                5,
+                "лес",
+                47,
+                "мясо");
+        System.out.println(bear);
+        bear.prey();
+        bear.eat();
+        bear.walk();
+        bear.move();
+        bear.sleep();
+        System.out.println();
 
     }
 }
-//horse, giraffe, gazelle
+//hyena, tiger, bear
