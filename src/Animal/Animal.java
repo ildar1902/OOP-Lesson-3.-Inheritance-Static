@@ -2,11 +2,11 @@ package Animal;
 
 import java.time.LocalDate;
 
-public abstract class animal {
+public abstract class Animal {
     private String name;
     private final int yearBirth;
 
-    public animal(String name, int age) {
+    public Animal(String name, int age) {
         setName(name);
         if (age >= 0) {
             this.yearBirth = LocalDate.now().getYear() - age;

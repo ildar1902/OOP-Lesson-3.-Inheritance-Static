@@ -1,6 +1,6 @@
 package Animal;
 
-public abstract class Bird extends animal {
+public abstract class Bird extends Animal {
     private String livingEnvironment;
 
     public Bird(String name, int age, String livingEnvironment) {

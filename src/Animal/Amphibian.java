@@ -1,21 +1,19 @@
 package Animal;
 
-public class Amphibian extends animal {
+public class Amphibian extends Animal {
     private String livingEnvironment;
-    private final String kindName;
+    private String kindName;
 
-       public Amphibian(String kindName, String name, int age, String livingEnvironment) {
+    public Amphibian(String kindName, String name, int age, String livingEnvironment) {
         super(name, age);
         setLivingEnvironment(livingEnvironment);
-           if (kindName != null && !kindName.isEmpty() && !kindName.isBlank()) {
-               this.kindName = kindName;
-           } else {
-               this.kindName = "Информация не указана";
-           }
+        setKindName(kindName);
     }
+
     public void hunt() {
         System.out.println(getKindName() + " " + getName() + " охотится");
     }
+
     @Override
     public void eat() {
         System.out.println(getKindName() + " " + getName() + " ест");
@@ -34,9 +32,11 @@ public class Amphibian extends animal {
     public String getLivingEnvironment() {
         return livingEnvironment;
     }
+
     public String getKindName() {
         return kindName;
     }
+
     protected void setLivingEnvironment(String livingEnvironment) {
         if (livingEnvironment == null || livingEnvironment.isEmpty() || livingEnvironment.isBlank()) {
             this.livingEnvironment = "Не указаны данные";
@@ -44,6 +44,15 @@ public class Amphibian extends animal {
             this.livingEnvironment = livingEnvironment;
         }
     }
+
+    public final void setKindName(String kindName) {
+        if (kindName != null && !kindName.isEmpty() && !kindName.isBlank()) {
+            this.kindName = kindName;
+        } else {
+            this.kindName = "Информация не указана";
+        }
+    }
+
     public static void checkUniqueness(Amphibian animal1,
                                        Amphibian animal2) {
         if (!animal1.equals(animal2)) {
