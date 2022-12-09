@@ -1,20 +1,16 @@
 package Transport;
 
-//        - Марка
-//        - Модель
-//        - Год выпуска
-//        - Страна производства
-//        - Цвет кузова
-//        - Максимальная скорость передвижения
-public class transport {
+public abstract class transport {
     private final String brand;
     private final String model;
     private final int year;
     private final String country;
     private String color;
     private double maxSpeed;
+    private double fuelPercentage;
 
-    public transport(String brand, String model, int year, String country, String color, double maxSpeed) {
+    public transport(String brand, String model, int year, String country, String color,
+                     double maxSpeed, double fuelPercentage) {
         if (brand == null || brand.isEmpty()) {
             this.brand = "default";
         } else {
@@ -37,7 +33,10 @@ public class transport {
         }
         setColor(color);
         setMaxSpeed(maxSpeed);
+        setFuelPercentage(fuelPercentage);
     }
+
+    public abstract void refill();
 
     public String getBrand() {
         return brand;
@@ -70,10 +69,23 @@ public class transport {
         return maxSpeed;
     }
 
+    public double getFuelPercentage() {
+        return fuelPercentage;
+    }
+
+    public void setFuelPercentage(double fuelPercentage) {
+        if (fuelPercentage < 0) {
+            this.fuelPercentage = 0;
+        } else{
+            this.fuelPercentage = fuelPercentage;
+        }
+    }
+
     public void setMaxSpeed(double maxSpeed) {
         this.maxSpeed = maxSpeed;
         if (maxSpeed <= 0) {
             this.maxSpeed = 100;
+
         }
     }
 }

@@ -3,6 +3,11 @@ package Transport;
 import java.time.LocalDate;
 
 public class Car extends transport {
+    @Override
+    public void refill() {
+
+    }
+
     public static class Key {
         private final boolean remoteEngineStart;
         private final boolean keylessAccess;
@@ -73,11 +78,11 @@ public class Car extends transport {
     public Car(String brand, String model, double engineVolume,
                String color, int year, String country,
                String transmission, String bodyType,
-               String serialNumber, int numberSeats, double maxSpeed) {
+               String serialNumber, int numberSeats, double maxSpeed, double fuelPercentage) {
 
-        super(brand, model, year, country,color,maxSpeed);
+        super(brand, model, year, country, color, maxSpeed, fuelPercentage);
         setEngineVolume(engineVolume);
-                setTransmission(transmission);
+        setTransmission(transmission);
         this.bodyType = bodyType;
         if (bodyType == null || bodyType.isEmpty())
             bodyType = "седан";
@@ -87,6 +92,15 @@ public class Car extends transport {
             numberSeats = 5;
         }
         setSummerTyres(summerTyres);
+    }
+
+    public Car(String brand, String model, double engineVolume,
+               String color, int year, String country,
+               String transmission, String bodyType,
+               String serialNumber, int numberSeats, double maxSpeed) {
+        this(brand, model, engineVolume, color, year, country, transmission, bodyType,
+                serialNumber, numberSeats, maxSpeed, 0);
+
     }
 
     public double getEngineVolume() {
@@ -120,6 +134,7 @@ public class Car extends transport {
             this.engineVolume = engineVolume;
         }
     }
+
     public void setTransmission(String transmission) {
         if (transmission == null || transmission.isEmpty()) {
             this.transmission = "МКПП";

@@ -9,8 +9,19 @@ public class Train extends transport {
 
     public Train(String brand, String model, int year, String country, String color,
                  double maxSpeed, double priceOfTrip,
+                 String travelTime, String departureStationName, String finalStop, int numberWagons, double fuelPercentage) {
+        super(brand, model, year, country, color, maxSpeed, fuelPercentage);
+        setPriceOfTrip(priceOfTrip);
+        setTravelTime(travelTime);
+        setDepartureStationName(departureStationName);
+        setFinalStop(finalStop);
+        setNumberWagons(numberWagons);
+    }
+    public Train(String brand, String model, int year, String country, String color,
+                 double maxSpeed, double priceOfTrip,
                  String travelTime, String departureStationName, String finalStop, int numberWagons) {
-        super(brand, model, year, country, color, maxSpeed);
+       this (brand, model, year, country, color, maxSpeed, priceOfTrip, travelTime, departureStationName, finalStop,
+               numberWagons, 0);
         setPriceOfTrip(priceOfTrip);
         setTravelTime(travelTime);
         setDepartureStationName(departureStationName);
@@ -87,6 +98,11 @@ public class Train extends transport {
                 ", отходит от станции " + departureStationName +
                 " и следует до станции " + finalStop +
                 ", в поезде " + numberWagons + " вагонов.";
+
+    }
+
+    @Override
+    public void refill() {
 
     }
 }

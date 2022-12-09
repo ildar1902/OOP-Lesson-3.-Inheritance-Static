@@ -19,7 +19,8 @@ public class Main {
                 "седан",
                 "а001аа102",
                 5,
-                0);
+                180,
+                75.67);
         System.out.println(ladaGranta);
         Car audiA8 = new Car(
                 "Audi",
@@ -32,7 +33,7 @@ public class Main {
                 "седан",
                 "а002аа102",
                 4,
-                0);
+                220);
         System.out.println(audiA8);
         Car bmw = new Car(
                 "BMW",
@@ -45,7 +46,7 @@ public class Main {
                 "хэтчбек",
                 "а003аа102",
                 4,
-                0);
+                200);
         System.out.println(bmw);
         Car kiaSportage = new Car(
                 "Kia",
@@ -58,7 +59,7 @@ public class Main {
                 "кроссовер",
                 "а004аа102",
                 6,
-                0);
+                180);
         System.out.println(kiaSportage);
         Car hyundai = new Car(
                 "Hyundai",
@@ -71,7 +72,7 @@ public class Main {
                 "седан",
                 "а005аа102",
                 5,
-                0);
+                180);
         System.out.println(hyundai);
         System.out.println();
         Car.Key bmwKey = new Car.Key(true, false);
@@ -135,7 +136,8 @@ public class Main {
                 2015,
                 "Беларусь",
                 "белый",
-                110);
+                110,
+                56.55);
         System.out.println(b1);
         Bus b2 = new Bus(
                 "ПАЗ",
@@ -143,7 +145,8 @@ public class Main {
                 2012,
                 "Россия",
                 "синий",
-                100);
+                100,
+                67.34);
         System.out.println(b2);
         Bus b3 = new Bus(
                 "ЛАЗ",
@@ -151,7 +154,9 @@ public class Main {
                 2014,
                 "Украина",
                 "красный",
-                150);
+                150,
+                72.15);
         System.out.println(b3);
+
     }
 }
