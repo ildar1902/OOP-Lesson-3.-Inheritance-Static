@@ -7,22 +7,33 @@ public class Bus extends transport{
     public Bus(String brand, String model, int year, String country,
                String color, double maxSpeed, double fuelPercentage, String typeOfFuel) {
         super(brand, model, year, country, color, maxSpeed, fuelPercentage);
-        this.typeOfFuel = typeOfFuel;
+        setTypeOfFuel(typeOfFuel);
     }
     public Bus(String brand, String model, int year, String country,
                String color, double maxSpeed, double fuelPercentage) {
         this(brand, model, year, country, color, maxSpeed, fuelPercentage,null);
     }
 
-    @Override
-    public void refill() {
-
-    }
     public String getTypeOfFuel() {
         return typeOfFuel;
     }
     public void setTypeOfFuel(String typeOfFuel) {
-        this.typeOfFuel = typeOfFuel;
+        if (typeOfFuel != null && !typeOfFuel.isEmpty()
+                && !typeOfFuel.isBlank() && typeOfFuel.equals("дизель")) {
+            this.typeOfFuel = typeOfFuel;
+        } else {
+            this.typeOfFuel = "бензин";
+        }
+    }
+    @Override
+    public void refill() {
+        if (getFuelPercentage() < fullTank) {
+            System.out.println("Уровень топлива = " + getFuelPercentage() + "%");
+            System.out.println("Едем на " + getBrand() + " на АЗС, где заправляют " + typeOfFuel);
+            System.out.println("Заправляем " + typeOfFuel);
+            setFuelPercentage(fullTank);
+            System.out.println("Готово! Теперь уровень топлива = " + getFuelPercentage() + "%!");
+        }
     }
 
     @Override

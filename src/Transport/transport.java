@@ -76,8 +76,8 @@ public abstract class transport {
     }
 
     public void setFuelPercentage(double fuelPercentage) {
-        if (fuelPercentage < 0) {
-            this.fuelPercentage = 0;
+        if (fuelPercentage <=0) {
+            this.fuelPercentage = 2;
         } else{
             this.fuelPercentage = fuelPercentage;
         }

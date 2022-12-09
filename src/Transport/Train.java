@@ -18,7 +18,7 @@ public class Train extends transport {
         setDepartureStationName(departureStationName);
         setFinalStop(finalStop);
         setNumberWagons(numberWagons);
-        this.typeOfFuel = typeOfFuel;
+        setTypeOfFuel(typeOfFuel);
     }
     public Train(String brand, String model, int year, String country, String color,
                  double maxSpeed, double priceOfTrip,
@@ -96,8 +96,12 @@ public class Train extends transport {
     }
 
     public void setTypeOfFuel(String typeOfFuel) {
-
-        this.typeOfFuel = typeOfFuel;
+        if (typeOfFuel != null && !typeOfFuel.isEmpty()
+                && !typeOfFuel.isBlank() && typeOfFuel.equals("дизель")) {
+            this.typeOfFuel = typeOfFuel;
+        } else {
+            this.typeOfFuel = "дизель";
+        }
     }
 
     @Override
@@ -115,6 +119,12 @@ public class Train extends transport {
 
     @Override
     public void refill() {
+        if (getFuelPercentage() < fullTank) {
+            System.out.println("Уровень топлива у поезда " + getBrand() + " " + getModel() +  " = " + getFuelPercentage() + "%");
+            System.out.println("Заправляем в " + getBrand() + " " + getModel() + " " + typeOfFuel);
+            setFuelPercentage(fullTank);
+            System.out.println("Готово! Теперь уровень топлива = " + getFuelPercentage() + "%!");
+        }
 
     }
 }

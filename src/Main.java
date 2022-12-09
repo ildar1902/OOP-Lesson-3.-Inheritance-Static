@@ -136,6 +136,7 @@ public class Main {
                 "Станция Ленинград-пассажирский",
                 8);
         System.out.println(leningrad);
+        leningrad.refill();
         Bus b1 = new Bus(
                 "МАЗ",
                 "1034",
@@ -163,6 +164,8 @@ public class Main {
                 150,
                 72.15);
         System.out.println(b3);
+     System.out.println("b3.getFuelPercentage() = " + b3.getFuelPercentage());
+     b3.refill();
 
     }
 }

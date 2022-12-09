@@ -169,7 +169,6 @@ setTypeOfFuel(typeOfFuel);
     public void changeTyres() {
         setSummerTyres(!summerTyres);
     }
-
     public boolean isValidNumber() {
         return serialNumber.length() == 9
 
@@ -188,11 +187,13 @@ setTypeOfFuel(typeOfFuel);
     @Override
     public void refill() {
         if (getFuelPercentage() < fullTank && typeOfFuel.equals("бензин") || typeOfFuel.equals("дизель")) {
+            System.out.println("Уровень топлива = " + getFuelPercentage() + "%");
             System.out.println("Едем на " + getBrand() + " на АЗС, где заправляют " + typeOfFuel);
             System.out.println("Заправляем " + typeOfFuel);
             setFuelPercentage(fullTank);
             System.out.println("Готово! Теперь уровень топлива = " + getFuelPercentage() + "%!");
         } else if (getFuelPercentage() < fullTank && typeOfFuel.equals("электроэнергия")) {
+            System.out.println("Уровень заряда = " + getFuelPercentage() + "%");
             System.out.println("Едем на " + getBrand() + " на специальную электропарковку.");
             System.out.println("Заряжаем электрокар");
             setFuelPercentage(fullTank);
