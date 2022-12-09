@@ -2,18 +2,39 @@ package Animal;
 
 public class Amphibian extends animal {
     private String livingEnvironment;
+    private String kindName;
 
-    public Amphibian(String name, int age, String livingEnvironment) {
+       public Amphibian(String kindName, String name, int age, String livingEnvironment) {
         super(name, age);
         setLivingEnvironment(livingEnvironment);
+           if (kindName != null && !kindName.isEmpty() && !kindName.isBlank()) {
+               this.kindName = kindName;
+           }
     }
     public void hunt() {
+        System.out.println(getKindName() + " " + getName() + " охотится");
+    }
+    @Override
+    public void eat() {
+        System.out.println(getKindName() + " " + getName() + " ест");
+    }
+
+    @Override
+    public void sleep() {
+        System.out.println(getKindName() + " " + getName() + " спит");
+    }
+
+    @Override
+    public void move() {
+        System.out.println(getKindName() + " " + getName() + " двигается");
     }
 
     public String getLivingEnvironment() {
         return livingEnvironment;
     }
-
+    public String getKindName() {
+        return kindName;
+    }
     protected void setLivingEnvironment(String livingEnvironment) {
         if (livingEnvironment == null || livingEnvironment.isEmpty() || livingEnvironment.isBlank()) {
             this.livingEnvironment = "Не указаны данные";
@@ -21,20 +42,19 @@ public class Amphibian extends animal {
             this.livingEnvironment = livingEnvironment;
         }
     }
-
-    @Override
-    public void eat() {
-
+    public static void checkUniqueness(Amphibian animal1,
+                                       Amphibian animal2) {
+        if (!animal1.equals(animal2)) {
+            System.out.println("Все животные в классе земноводных уникальны!");
+        } else {
+            System.out.println("Есть похожие животные!");
+        }
     }
 
     @Override
-    public void sleep() {
-
-    }
-
-    @Override
-    public void move() {
-
+    public String toString() {
+        return "    " + getKindName() + " по кличке " + getName() + ":" + String.format("%n") + "Возраст: " + getAge()
+                + ", место обитания: " + getLivingEnvironment();
     }
 }
 

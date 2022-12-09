@@ -1,10 +1,9 @@
 package Animal;
-
 public class Herbivore extends Mammal {
     private String typeOfFood;
     private String kindName;
 
-    public Herbivore( String kindName, String name, int age, String livingEnvironment, int travelSpeed, String typeOfFood) {
+    public Herbivore(String kindName, String name, int age, String livingEnvironment, int travelSpeed, String typeOfFood) {
         super(name, age, livingEnvironment, travelSpeed);
         setTypeOfFood(typeOfFood);
         if (kindName != null && !kindName.isEmpty() && !kindName.isBlank()) {
@@ -44,16 +43,44 @@ public class Herbivore extends Mammal {
     public String getTypeOfFood() {
         return typeOfFood;
     }
+
     public void setTypeOfFood(String typeOfFood) {
         if (typeOfFood != null && !typeOfFood.isEmpty() && !typeOfFood.isBlank()) {
             this.typeOfFood = typeOfFood;
         }
     }
 
+    public static void checkUniqueness(Herbivore herbivore, Herbivore otherHerbivore, Herbivore thirdHerbivore) {
+        if (!herbivore.equals(otherHerbivore) && !herbivore.equals(thirdHerbivore)
+                && !otherHerbivore.equals(thirdHerbivore)) {
+            System.out.println("Все животные в классе травоядных уникальны!");
+        } else {
+            System.out.println("Есть похожие животные!");
+        }
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Herbivore herbivore = (Herbivore) o;
+
+        if (!typeOfFood.equals(herbivore.typeOfFood)) return false;
+        return kindName.equals(herbivore.kindName);
+    }
+
+    @Override
+    public int hashCode() {
+        int result = typeOfFood.hashCode();
+        result = 31 * result + kindName.hashCode();
+        return result;
+    }
+
     @Override
     public String toString() {
         return "    " + getKindName() + " по кличке " + getName() + ":" + String.format("%n") + "Возраст: " + getAge()
-                + ", место обитания " + getLivingEnvironment() + ", скорость передвижения: " + getTravelSpeed() +
+                + ", место обитания: " + getLivingEnvironment() + ", скорость передвижения: " + getTravelSpeed() +
                 "км/ч, тип пищи: " + typeOfFood;
 
     }

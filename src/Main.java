@@ -1,3 +1,4 @@
+import Animal.Amphibian;
 import Animal.Herbivore;
 import Animal.Predator;
 import Transport.Bus;
@@ -211,6 +212,9 @@ public class Main {
         gazelle.move();
         gazelle.walk();
         gazelle.sleep();
+
+        Herbivore.checkUniqueness(horse, gazelle, giraffe);
+
         System.out.println();
         Predator hyena = new Predator(
                 "гиена",
@@ -253,8 +257,33 @@ public class Main {
         bear.walk();
         bear.move();
         bear.sleep();
+        Predator.checkUniqueness(bear,tiger,hyena);
+        System.out.println();
+        Amphibian frog = new Amphibian(
+                "лягушка",
+                "Алёна",
+                3,
+                "болото");
+        System.out.println(frog);
+        frog.hunt();
+        frog.eat();
+        frog.move();
+        frog.sleep();
+        System.out.println();
+        Amphibian snakeFreshwater = new Amphibian(
+                "уж",
+                "Евгений",
+                3,
+                "реки");
+        System.out.println(snakeFreshwater);
+        snakeFreshwater.hunt();
+        snakeFreshwater.eat();
+        snakeFreshwater.move();
+        snakeFreshwater.sleep();
+        Amphibian.checkUniqueness(frog,snakeFreshwater);
         System.out.println();
 
     }
 }
 //hyena, tiger, bear
+//frog,  freshwater
