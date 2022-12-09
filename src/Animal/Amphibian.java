@@ -56,7 +56,8 @@ public class Amphibian extends animal {
     @Override
     public String toString() {
         return "    " + getKindName() + " по кличке " + getName() + ":" + String.format("%n") + "Возраст: " + getAge()
-                + ", место обитания: " + getLivingEnvironment();
+                + ", место обитания: " + getLivingEnvironment()
+                + ", принадлежит классу: " + getClass();
     }
 }
 

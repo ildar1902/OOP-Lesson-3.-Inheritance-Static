@@ -1,7 +1,4 @@
-import Animal.Amphibian;
-import Animal.Flightless;
-import Animal.Herbivore;
-import Animal.Predator;
+import Animal.*;
 import Transport.Bus;
 import Transport.Car;
 import Transport.Train;
@@ -177,8 +174,9 @@ public class Main {
 
         System.out.println(" ДЗ 3. Иерархия классов животных");
 
-//        ТРАВОЯДНЫЕ
-
+//       МЛЕКОПИТАЮЩИЕ ТРАВОЯДНЫЕ
+        System.out.println("        Млекопитающие:");
+        System.out.println("    Травоядные ");
         Herbivore giraffe = new Herbivore(
                 "жираф",
                 "Рафф",
@@ -222,9 +220,10 @@ public class Main {
         gazelle.sleep();
         Herbivore.checkUniqueness(horse, gazelle, giraffe);
 
-//        ХИЩНИКИ
+//       МЛЕКОПИТАЮЩИЕ ХИЩНИКИ
 
         System.out.println();
+        System.out.println("    Хищники");
         Predator hyena = new Predator(
                 "гиена",
                 "Олег",
@@ -270,7 +269,7 @@ public class Main {
         System.out.println();
 
 //        ЗЕМНОВОДНЫЕ
-
+        System.out.println("    Земноводные");
         Amphibian frog = new Amphibian(
                 "лягушка",
                 "Алёна",
@@ -296,7 +295,7 @@ public class Main {
         System.out.println();
 
 //        НЕЛЕТАЮЩИЕ ПТИЦЫ
-
+        System.out.println("    Нелетающие птицы");
         Flightless peacock = new Flightless(
                 "павлин",
                 "Арсений",
@@ -335,10 +334,53 @@ public class Main {
         dodo.eat();
         dodo.move();
         dodo.sleep();
-        System.out.println();
         Flightless.checkUniqueness(peacock,penguin,dodo);
+        System.out.println();
+
+//        ЛЕТАЮЩИЕ ПТИЦЫ
+        System.out.println("    Летающие птицы");
+        Flying seagull = new Flying(
+                "чайка",
+                "Оля",
+                7,
+                "водоёмы",
+                "летает");
+        System.out.println(seagull);
+        seagull.hunt();
+        seagull.fly();
+        seagull.sleep();
+        seagull.eat();
+        seagull.move();
+        System.out.println();
+        Flying albatross = new Flying(
+                "альбатрос",
+                "Иван",
+                3,
+                "Антарктида",
+                "летает");
+        System.out.println(albatross);
+        albatross.hunt();
+        albatross.fly();
+        albatross.sleep();
+        albatross.eat();
+        albatross.move();
+        System.out.println();
+        Flying falcon = new Flying(
+                "сокол",
+                "Серёга",
+                5,
+                "тайга",
+                "летает");
+        System.out.println(falcon);
+        falcon.hunt();
+        falcon.fly();
+        falcon.sleep();
+        falcon.eat();
+        falcon.move();
+        System.out.println();
+        Flying.checkUniqueness(seagull, albatross, falcon);
+        System.out.println();
+        System.out.println("    Окончен урок Наследование ");
+
     }
 }
-//hyena, tiger, bear
-//frog,  freshwater
-//peacock, penguin, dodo bird

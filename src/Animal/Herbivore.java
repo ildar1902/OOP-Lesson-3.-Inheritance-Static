@@ -80,7 +80,8 @@ public class Herbivore extends Mammal {
     public String toString() {
         return "    " + getKindName() + " по кличке " + getName() + ":" + String.format("%n") + "Возраст: " + getAge()
                 + ", место обитания: " + getLivingEnvironment() + ", скорость передвижения: " + getTravelSpeed() +
-                "км/ч, тип пищи: " + typeOfFood;
+                "км/ч, тип пищи: " + typeOfFood
+                + ", принадлежит классу: " + getClass();
 
     }
 }
