@@ -29,7 +29,7 @@ public class Bus extends transport{
     public void refill() {
         if (getFuelPercentage() < fullTank) {
             System.out.println("Уровень топлива = " + getFuelPercentage() + "%");
-            System.out.println("Едем на " + getBrand() + " на АЗС, где заправляют " + typeOfFuel);
+            System.out.println("Едем на автобусе " + getBrand() + " на АЗС, где заправляют " + typeOfFuel);
             System.out.println("Заправляем " + typeOfFuel);
             setFuelPercentage(fullTank);
             System.out.println("Готово! Теперь уровень топлива = " + getFuelPercentage() + "%!");

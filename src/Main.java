@@ -166,6 +166,5 @@ public class Main {
         System.out.println(b3);
      System.out.println("b3.getFuelPercentage() = " + b3.getFuelPercentage());
      b3.refill();
-
     }
 }

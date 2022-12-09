@@ -89,7 +89,7 @@ public class Car extends transport {
             numberSeats = 5;
         }
         setSummerTyres(summerTyres);
-setTypeOfFuel(typeOfFuel);
+        setTypeOfFuel(typeOfFuel);
     }
 
     public Car(String brand, String model, double engineVolume,
@@ -97,7 +97,7 @@ setTypeOfFuel(typeOfFuel);
                String transmission, String bodyType,
                String serialNumber, int numberSeats, double maxSpeed) {
         this(brand, model, engineVolume, color, year, country, transmission, bodyType,
-                serialNumber, numberSeats, maxSpeed, 0,"");
+                serialNumber, numberSeats, maxSpeed, 0, "");
     }
 
     public double getEngineVolume() {
@@ -156,19 +156,20 @@ setTypeOfFuel(typeOfFuel);
         return typeOfFuel;
     }
 
-   public void setTypeOfFuel(String typeOfFuel) {
-       if (typeOfFuel!= null && !typeOfFuel.isEmpty()
-               && !typeOfFuel.isBlank() &&( typeOfFuel.equals("дизель") ||typeOfFuel.equals("электроэнергия") )) {
-           this.typeOfFuel = typeOfFuel;
-       } else {
-           this.typeOfFuel = "бензин";
-       }
-   }
+    public void setTypeOfFuel(String typeOfFuel) {
+        if (typeOfFuel != null && !typeOfFuel.isEmpty()
+                && !typeOfFuel.isBlank() && (typeOfFuel.equals("дизель") || typeOfFuel.equals("электроэнергия"))) {
+            this.typeOfFuel = typeOfFuel;
+        } else {
+            this.typeOfFuel = "бензин";
+        }
+    }
 
 
     public void changeTyres() {
         setSummerTyres(!summerTyres);
     }
+
     public boolean isValidNumber() {
         return serialNumber.length() == 9
 
@@ -188,16 +189,16 @@ setTypeOfFuel(typeOfFuel);
     public void refill() {
         if (getFuelPercentage() < fullTank && typeOfFuel.equals("бензин") || typeOfFuel.equals("дизель")) {
             System.out.println("Уровень топлива = " + getFuelPercentage() + "%");
-            System.out.println("Едем на " + getBrand() + " на АЗС, где заправляют " + typeOfFuel);
+            System.out.println("Едем на автомобиле " + getBrand() + " на АЗС, где заправляют " + typeOfFuel);
             System.out.println("Заправляем " + typeOfFuel);
             setFuelPercentage(fullTank);
-            System.out.println("Готово! Теперь уровень топлива = " + getFuelPercentage() + "%!");
+            System.out.println("Готово! Теперь уровень топлива = " + String.format("%.2f", getFuelPercentage()) + "%!");
         } else if (getFuelPercentage() < fullTank && typeOfFuel.equals("электроэнергия")) {
             System.out.println("Уровень заряда = " + getFuelPercentage() + "%");
             System.out.println("Едем на " + getBrand() + " на специальную электропарковку.");
             System.out.println("Заряжаем электрокар");
             setFuelPercentage(fullTank);
-            System.out.println("Готово! Теперь уровень заряда = " + getFuelPercentage() + "%!");
+            System.out.println("Готово! Теперь уровень заряда = " + String.format("%.2f", getFuelPercentage()) + "%!");
         }
     }
 
