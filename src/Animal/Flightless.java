@@ -6,13 +6,13 @@ public class Flightless extends Bird {
 
     public Flightless(String kindName, String name, int age, String livingEnvironment, String movementType) {
         super(name, age, livingEnvironment);
-        if (movementType != null && !movementType.isEmpty() & !movementType.isBlank()) {
+        if (StringUtils.isNotEmpty(movementType)) {
             this.movementType = movementType;
         } else {
             this.movementType = "Информация не указана";
         }
 
-        if (kindName != null && !kindName.isEmpty() && !kindName.isBlank()) {
+        if (StringUtils.isNotEmpty(kindName)) {
             this.kindName = kindName;
         } else {
             this.kindName = "Информация не указана";

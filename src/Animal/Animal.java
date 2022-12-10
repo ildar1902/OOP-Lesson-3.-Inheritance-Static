@@ -26,7 +26,7 @@ public abstract class Animal {
     }
 
     protected void setName(String name) {
-        if (name == null || name.isEmpty() || name.isBlank()) {
+        if (StringUtils.isNullOrEmpty(name)) {
             this.name = "some kind of animal";
         } else {
             this.name = name;

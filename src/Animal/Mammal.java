@@ -17,7 +17,7 @@ public abstract class Mammal extends Animal {
     }
 
     protected void setLivingEnvironment(String livingEnvironment) {
-        if (livingEnvironment == null || livingEnvironment.isEmpty() || livingEnvironment.isBlank()) {
+        if (StringUtils.isNullOrEmpty(livingEnvironment)) {
             this.livingEnvironment = "Не указаны данные";
         } else {
             this.livingEnvironment = livingEnvironment;

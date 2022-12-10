@@ -5,12 +5,12 @@ public class Herbivore extends Mammal {
 
     public Herbivore(String kindName, String name, int age, String livingEnvironment, int travelSpeed, String typeOfFood) {
         super(name, age, livingEnvironment, travelSpeed);
-        if (typeOfFood != null && !typeOfFood.isEmpty() && !typeOfFood.isBlank()) {
+        if (StringUtils.isNotEmpty(typeOfFood)) {
             this.typeOfFood = typeOfFood;
         } else {
             this.typeOfFood = "Информация не указана";
         }
-        if (kindName != null && !kindName.isEmpty() && !kindName.isBlank()) {
+        if (StringUtils.isNotEmpty(kindName)) {
             this.kindName = kindName;
         } else {
             this.kindName = "Информация не указана";
